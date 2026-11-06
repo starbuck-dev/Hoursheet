@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>利用規約 · Hoursheet</title>
+    <meta name="description" content="HoursheetはAppleの標準ライセンス契約に基づいて使用許諾されます。フルアンロックはApp Storeでの買い切りの購入です。">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Hoursheet/ja/terms/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Hoursheet/terms/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Hoursheet/de/terms/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Hoursheet/es/terms/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Hoursheet/fr/terms/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Hoursheet/it/terms/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Hoursheet/pt-br/terms/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Hoursheet/ru/terms/">
+    <link rel="alternate" hreflang="ja" href="https://starbuck-dev.github.io/Hoursheet/ja/terms/">
+    <link rel="alternate" hreflang="ko" href="https://starbuck-dev.github.io/Hoursheet/ko/terms/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Hoursheet/terms/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --bg: #F5F7F6; --surface: #FFFFFF; --separator: #E1E6E4; --text: #13201E; --text-2: #4B5A57;
+    --accent: #0F766E; --accent-soft: rgba(15, 118, 110, 0.08); --on-accent: #FFFFFF; --todo: #FDE68A;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0B1312; --surface: #15201F; --separator: #263432; --text: #EEF4F2; --text-2: #A3B3B0;
+        --accent: #2DD4BF; --accent-soft: rgba(45, 212, 191, 0.12); --on-accent: #042F2E; --todo: #854D0E;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 12px; }
+.brand { color: var(--text); font-weight: 700; font-size: 20px; text-decoration: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary {
+    list-style: none; cursor: pointer; padding: 6px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--surface); color: var(--text); border: 1px solid var(--separator);
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: " \25BE"; color: var(--text-2); }
+.lang ul {
+    position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none; min-width: 190px;
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+.lang li a { display: block; padding: 7px 12px; border-radius: 9px; color: var(--text); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card {
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 20px;
+    padding: 24px; margin: 16px 0;
+}
+h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+p, li { color: var(--text-2); }
+.date { font-size: 14px; color: var(--text-2); margin: 0 0 20px; }
+.summary { background: var(--accent-soft); border-radius: 14px; padding: 4px 16px; margin: 16px 0; }
+.lead { font-size: 18px; color: var(--text-2); }
+.button {
+    display: inline-block; background: var(--accent); color: var(--on-accent); font-weight: 600;
+    padding: 12px 28px; border-radius: 24px; text-decoration: none; margin-top: 8px;
+}
+.links { display: grid; gap: 12px; margin: 16px 0; }
+.links a {
+    display: block; background: var(--surface); border: 1px solid var(--separator); border-radius: 16px;
+    padding: 16px 20px; text-decoration: none;
+}
+.links strong { display: block; color: var(--text); }
+.links span { color: var(--text-2); font-size: 15px; }
+mark.todo { background: var(--todo); color: var(--text); padding: 0 4px; border-radius: 4px; }
+footer { padding: 16px 16px 40px; font-size: 14px; color: var(--text-2); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+<header class="wrap top">
+    <a class="brand" href="../">Hoursheet</a>
+    <details class="lang">
+        <summary aria-label="言語">日本語</summary>
+        <ul>
+            <li><a href="../../terms/" hreflang="en" lang="en">English</a></li>
+            <li><a href="../../de/terms/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="../../es/terms/" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../../fr/terms/" hreflang="fr" lang="fr">Français</a></li>
+            <li><a href="../../it/terms/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="../../pt-br/terms/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+            <li><a href="../../ru/terms/" hreflang="ru" lang="ru">Русский</a></li>
+            <li><a href="./" hreflang="ja" lang="ja" aria-current="page">日本語</a></li>
+            <li><a href="../../ko/terms/" hreflang="ko" lang="ko">한국어</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap">
+<article class="card">
+<h1>利用規約</h1>
+<p class="date">施行日：2026年10月31日</p>
+<div class="summary"><p><strong>概要：</strong>Hoursheetのご利用には、Appleの標準の<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">ライセンス済みアプリケーションエンドユーザ使用許諾契約</a>が適用されます。以下では、それがアプリにどのように適用されるかを説明します。</p></div>
+<section>
+<h2>1. 使用許諾</h2>
+<p>HoursheetはMacLarens Studioが提供し、Appleの<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">ライセンス済みアプリケーションエンドユーザ使用許諾契約（EULA）</a>に基づいてお客様に使用許諾されます。このページで説明する内容のほかに、当方独自の条件を追加することはありません。</p>
+</section>
+<section>
+<h2>2. フルアンロック</h2>
+<p>Hoursheetは無料でダウンロードできます。オプションのフルアンロックは、1回限りの非消耗型App内課金で、保存できるシートが無制限になり、PDFエクスポートとプリセットが加わります。サブスクリプションではなく、自動更新されることはありません。価格は購入前にApp Storeがお客様の通貨で表示します。同じApple アカウントでサインインしているデバイスであれば、「購入を復元」で購入を復元できます。</p>
+</section>
+<section>
+<h2>3. 支払いと返金</h2>
+<p>購入はApp Storeの規約に基づいてAppleが処理します。返金はAppleが取り扱います。<a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a> からリクエストできます。</p>
+</section>
+<section>
+<h2>4. データと計算結果</h2>
+<p>シートはお客様のものであり、お使いのデバイスに保存されます（<a href="../privacy/">プライバシーポリシー</a>をご覧ください）。Hoursheetは計算の補助ツールです。請求書や提出する勤務表などに使う前に、合計と報酬をご確認ください。EULAに記載のとおり、アプリは「現状のまま」提供されます。ただし、法律上排除できないお客様の権利には影響しません。</p>
+</section>
+<section>
+<h2>5. お問い合わせ</h2>
+<p>本規約に関するご質問：<a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a></p>
+</section>
+</article>
+</main>
+<footer class="wrap">
+    <nav><a href="../support/">サポート</a> <a href="../privacy/">プライバシーポリシー</a> <a href="./">利用規約</a></nav>
+    <p>&copy; 2026 MacLarens Studio. 無断転載・複製を禁じます。</p>
+</footer>
+</body>
+</html>

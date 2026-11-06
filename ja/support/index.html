@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hoursheet サポート · Hoursheet</title>
+    <meta name="description" content="シート、合計と端数処理、エクスポート、買い切りのアンロック、購入の復元、新しいiPhoneへの移行、データの削除についての回答。">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Hoursheet/ja/support/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Hoursheet/de/support/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Hoursheet/es/support/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Hoursheet/fr/support/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Hoursheet/it/support/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Hoursheet/pt-br/support/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Hoursheet/ru/support/">
+    <link rel="alternate" hreflang="ja" href="https://starbuck-dev.github.io/Hoursheet/ja/support/">
+    <link rel="alternate" hreflang="ko" href="https://starbuck-dev.github.io/Hoursheet/ko/support/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --bg: #F5F7F6; --surface: #FFFFFF; --separator: #E1E6E4; --text: #13201E; --text-2: #4B5A57;
+    --accent: #0F766E; --accent-soft: rgba(15, 118, 110, 0.08); --on-accent: #FFFFFF; --todo: #FDE68A;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0B1312; --surface: #15201F; --separator: #263432; --text: #EEF4F2; --text-2: #A3B3B0;
+        --accent: #2DD4BF; --accent-soft: rgba(45, 212, 191, 0.12); --on-accent: #042F2E; --todo: #854D0E;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 12px; }
+.brand { color: var(--text); font-weight: 700; font-size: 20px; text-decoration: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary {
+    list-style: none; cursor: pointer; padding: 6px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--surface); color: var(--text); border: 1px solid var(--separator);
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: " \25BE"; color: var(--text-2); }
+.lang ul {
+    position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none; min-width: 190px;
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+.lang li a { display: block; padding: 7px 12px; border-radius: 9px; color: var(--text); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card {
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 20px;
+    padding: 24px; margin: 16px 0;
+}
+h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+p, li { color: var(--text-2); }
+.date { font-size: 14px; color: var(--text-2); margin: 0 0 20px; }
+.summary { background: var(--accent-soft); border-radius: 14px; padding: 4px 16px; margin: 16px 0; }
+.lead { font-size: 18px; color: var(--text-2); }
+.button {
+    display: inline-block; background: var(--accent); color: var(--on-accent); font-weight: 600;
+    padding: 12px 28px; border-radius: 24px; text-decoration: none; margin-top: 8px;
+}
+.links { display: grid; gap: 12px; margin: 16px 0; }
+.links a {
+    display: block; background: var(--surface); border: 1px solid var(--separator); border-radius: 16px;
+    padding: 16px 20px; text-decoration: none;
+}
+.links strong { display: block; color: var(--text); }
+.links span { color: var(--text-2); font-size: 15px; }
+mark.todo { background: var(--todo); color: var(--text); padding: 0 4px; border-radius: 4px; }
+footer { padding: 16px 16px 40px; font-size: 14px; color: var(--text-2); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+<header class="wrap top">
+    <a class="brand" href="../">Hoursheet</a>
+    <details class="lang">
+        <summary aria-label="言語">日本語</summary>
+        <ul>
+            <li><a href="../../support/" hreflang="en" lang="en">English</a></li>
+            <li><a href="../../de/support/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="../../es/support/" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../../fr/support/" hreflang="fr" lang="fr">Français</a></li>
+            <li><a href="../../it/support/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="../../pt-br/support/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+            <li><a href="../../ru/support/" hreflang="ru" lang="ru">Русский</a></li>
+            <li><a href="./" hreflang="ja" lang="ja" aria-current="page">日本語</a></li>
+            <li><a href="../../ko/support/" hreflang="ko" lang="ko">한국어</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap">
+<section class="card">
+<h1>Hoursheet サポート</h1>
+<p class="lead">勤務時間、報酬、日付をiPhoneで集計。</p>
+<p><strong>お困りですか？</strong> <a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a> までメールでお問い合わせください。MacLarens Studioが通常2営業日以内にお返事します。ヒント：アプリの「設定」›「サポートに問い合わせる」から送ると、アプリのバージョン、iOSのバージョン、デバイスがメールに自動で追加されます。</p>
+<a class="button" href="mailto:ssx51f@gmail.com?subject=Hoursheet%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">サポートにメール</a>
+</section>
+<section>
+<h2>よくある質問</h2>
+<div class="card">
+<h3>シートに行を追加するには？</h3>
+<p>「シート」タブでシートを開き、<strong>＋</strong>をタップします。<strong>勤務日</strong>には開始、終了、休憩があり、Hoursheetが所要時間を計算します（終了が開始より前の場合は、日付をまたいだ時間として数えます）。<strong>所要時間</strong>はラベル付きの時間で、たとえば「移動 1:30」のように使います。行をタップすると、その場で編集できます。<strong>週テンプレート</strong>を使うと、勤務日を7日分まとめて追加できます。</p>
+</div>
+<div class="card">
+<h3>合計、端数処理、報酬はどのように計算されますか？</h3>
+<p>合計は時間と分（h:mm）と10進数の時間で表示されます。シートに時給を設定すると、シートの通貨で報酬も表示されます。端数処理（1分単位、15分単位、6分単位）は各行に適用され、合計は端数処理後の行の合計です。報酬はその合計から1回だけ計算されます。</p>
+</div>
+<div class="card">
+<h3>無料で使える機能と、アンロックで追加される機能は？</h3>
+<p>ずっと無料：合計、時給、端数処理、報酬をすべて使えるシート1枚、「時間差」と「日付」の画面、テキストとCSVでのエクスポート。買い切りの<strong>フルアンロック</strong>で、保存できるシートが無制限になり、PDFエクスポートと、時給と端数処理のプリセットが加わります。サブスクリプションも広告もありません。価格は購入前にApp Storeがお住まいの国の通貨で表示します。</p>
+</div>
+<div class="card">
+<h3>新しいiPhoneで購入を復元するには？</h3>
+<p>アンロックを購入したApple アカウントでサインインし、「設定」またはアンロック画面で<strong>購入を復元</strong>をタップします。購入はApple アカウントに紐づいているため、そのアカウントで使うすべてのiPhoneで有効です。</p>
+</div>
+<div class="card">
+<h3>シートをエクスポートするには？</h3>
+<p>シートを開いて<strong>エクスポート</strong>をタップし、テキスト、CSV、PDFのいずれかを選んで、共有シート（メール、メッセージ、ファイル、AirDrop、ほかのアプリ）でファイルを送ります。CSVはNumbers、Excel、Googleスプレッドシートで開けます。エクスポートしたファイルは、バージョン1.0では英語です。</p>
+</div>
+<div class="card">
+<h3>シートは同期やバックアップされますか？</h3>
+<p>シートはお使いのiPhoneにだけ保存されます。Hoursheetはデバイス間で同期せず、サーバーもありません。シートはiPhoneのバックアップ（iCloudバックアップまたはコンピュータへのバックアップ）に含まれるため、バックアップから新しいiPhoneを設定すれば引き継がれます。別の場所にコピーを残したい場合は、シートをCSVまたはPDFでエクスポートしてください。</p>
+</div>
+<div class="card">
+<h3>データを削除するには？</h3>
+<p>「シート」タブでシートをスワイプすると削除できます。「設定」›<strong>すべてのデータを削除</strong>で、すべてのシートを一度に削除することもできます。アプリを削除すると、そのデータはすべてiPhoneから削除されます。こちらには何も送信されないため、コピーは一切保持していません。</p>
+</div>
+<div class="card">
+<h3>対応しているデバイスと言語は？</h3>
+<p>HoursheetはiOS 18以降のiPhoneで動作し、日本語、英語、ドイツ語、スペイン語、フランス語、イタリア語、ポルトガル語（ブラジル）、ロシア語、韓国語に対応しています。オフラインですべての機能を使えます。</p>
+</div>
+</section>
+</main>
+<footer class="wrap">
+    <nav><a href="./">サポート</a> <a href="../privacy/">プライバシーポリシー</a> <a href="../terms/">利用規約</a></nav>
+    <p>&copy; 2026 MacLarens Studio. 無断転載・複製を禁じます。</p>
+</footer>
+</body>
+</html>

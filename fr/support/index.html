@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assistance Hoursheet · Hoursheet</title>
+    <meta name="description" content="Réponses sur les feuilles, les totaux et l’arrondi, l’export, le déverrouillage unique, la restauration d’un achat, le passage à un nouvel iPhone et la suppression des données.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Hoursheet/fr/support/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Hoursheet/de/support/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Hoursheet/es/support/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Hoursheet/fr/support/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Hoursheet/it/support/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Hoursheet/pt-br/support/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Hoursheet/ru/support/">
+    <link rel="alternate" hreflang="ja" href="https://starbuck-dev.github.io/Hoursheet/ja/support/">
+    <link rel="alternate" hreflang="ko" href="https://starbuck-dev.github.io/Hoursheet/ko/support/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --bg: #F5F7F6; --surface: #FFFFFF; --separator: #E1E6E4; --text: #13201E; --text-2: #4B5A57;
+    --accent: #0F766E; --accent-soft: rgba(15, 118, 110, 0.08); --on-accent: #FFFFFF; --todo: #FDE68A;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0B1312; --surface: #15201F; --separator: #263432; --text: #EEF4F2; --text-2: #A3B3B0;
+        --accent: #2DD4BF; --accent-soft: rgba(45, 212, 191, 0.12); --on-accent: #042F2E; --todo: #854D0E;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 12px; }
+.brand { color: var(--text); font-weight: 700; font-size: 20px; text-decoration: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary {
+    list-style: none; cursor: pointer; padding: 6px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--surface); color: var(--text); border: 1px solid var(--separator);
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: " \25BE"; color: var(--text-2); }
+.lang ul {
+    position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none; min-width: 190px;
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+.lang li a { display: block; padding: 7px 12px; border-radius: 9px; color: var(--text); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card {
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 20px;
+    padding: 24px; margin: 16px 0;
+}
+h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+p, li { color: var(--text-2); }
+.date { font-size: 14px; color: var(--text-2); margin: 0 0 20px; }
+.summary { background: var(--accent-soft); border-radius: 14px; padding: 4px 16px; margin: 16px 0; }
+.lead { font-size: 18px; color: var(--text-2); }
+.button {
+    display: inline-block; background: var(--accent); color: var(--on-accent); font-weight: 600;
+    padding: 12px 28px; border-radius: 24px; text-decoration: none; margin-top: 8px;
+}
+.links { display: grid; gap: 12px; margin: 16px 0; }
+.links a {
+    display: block; background: var(--surface); border: 1px solid var(--separator); border-radius: 16px;
+    padding: 16px 20px; text-decoration: none;
+}
+.links strong { display: block; color: var(--text); }
+.links span { color: var(--text-2); font-size: 15px; }
+mark.todo { background: var(--todo); color: var(--text); padding: 0 4px; border-radius: 4px; }
+footer { padding: 16px 16px 40px; font-size: 14px; color: var(--text-2); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+<header class="wrap top">
+    <a class="brand" href="../">Hoursheet</a>
+    <details class="lang">
+        <summary aria-label="Langue">Français</summary>
+        <ul>
+            <li><a href="../../support/" hreflang="en" lang="en">English</a></li>
+            <li><a href="../../de/support/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="../../es/support/" hreflang="es" lang="es">Español</a></li>
+            <li><a href="./" hreflang="fr" lang="fr" aria-current="page">Français</a></li>
+            <li><a href="../../it/support/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="../../pt-br/support/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+            <li><a href="../../ru/support/" hreflang="ru" lang="ru">Русский</a></li>
+            <li><a href="../../ja/support/" hreflang="ja" lang="ja">日本語</a></li>
+            <li><a href="../../ko/support/" hreflang="ko" lang="ko">한국어</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap">
+<section class="card">
+<h1>Assistance Hoursheet</h1>
+<p class="lead">Heures, montant et jours, totalisés sur votre iPhone.</p>
+<p><strong>Besoin d’aide ?</strong> Écrivez à <a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a>. MacLarens Studio répond généralement sous deux jours ouvrés. Astuce : Réglages › « Contacter l’assistance » dans l’app ajoute à l’e-mail la version de l’app, la version d’iOS et votre appareil.</p>
+<a class="button" href="mailto:ssx51f@gmail.com?subject=Assistance%20Hoursheet">Écrire à l’assistance</a>
+</section>
+<section>
+<h2>Questions fréquentes</h2>
+<div class="card">
+<h3>Comment ajouter des lignes à une feuille ?</h3>
+<p>Ouvrez une feuille dans l’onglet Feuilles et touchez <strong>+</strong>. Une <strong>journée</strong> a un début, une fin et une pause, et Hoursheet en calcule la durée (si la fin précède le début, le temps passe minuit). Une <strong>durée</strong> est simplement un temps avec un libellé, par exemple « Trajet 1:30 ». Touchez une ligne pour la modifier sur place. Le <strong>modèle de semaine</strong> ajoute sept journées d’un coup.</p>
+</div>
+<div class="card">
+<h3>Comment sont calculés le total, l’arrondi et le montant ?</h3>
+<p>Le total s’affiche en heures et minutes (h:mm) et en heures décimales. Si vous indiquez un taux horaire dans la feuille, Hoursheet affiche aussi le montant, dans la devise de la feuille. L’arrondi (à la minute, au quart d’heure ou à 6 minutes) s’applique à chaque ligne ; le total est la somme des lignes arrondies, et le montant est calculé une seule fois à partir de ce total.</p>
+</div>
+<div class="card">
+<h3>Qu’est-ce qui est gratuit et qu’apporte le déverrouillage ?</h3>
+<p>Gratuit pour toujours : une feuille avec total, taux, arrondi et montant complets, les écrans Différence et Dates, et l’export en texte et en CSV. L’achat unique <strong>Déverrouillage complet</strong> ajoute un nombre illimité de feuilles enregistrées, l’export PDF et des préréglages de taux et d’arrondi. Il n’y a ni abonnement ni publicité. L’App Store affiche le prix dans votre devise avant l’achat.</p>
+</div>
+<div class="card">
+<h3>Comment restaurer mon achat sur un nouvel iPhone ?</h3>
+<p>Connectez-vous avec le compte Apple qui a servi à acheter le déverrouillage, puis touchez <strong>Restaurer les achats</strong> dans Réglages ou sur l’écran de déverrouillage. L’achat est lié à votre compte Apple : il fonctionne donc sur chaque iPhone que vous utilisez avec ce compte.</p>
+</div>
+<div class="card">
+<h3>Comment exporter une feuille ?</h3>
+<p>Ouvrez la feuille et touchez <strong>Exporter</strong> : choisissez Texte, CSV ou PDF et envoyez le fichier avec la feuille de partage (Mail, Messages, Fichiers, AirDrop ou une autre app). Le CSV s’ouvre dans Numbers, Excel et Google Sheets. Les fichiers exportés sont en anglais dans la version 1.0.</p>
+</div>
+<div class="card">
+<h3>Mes feuilles sont-elles synchronisées ou sauvegardées ?</h3>
+<p>Vos feuilles sont stockées uniquement sur votre iPhone. Hoursheet ne synchronise pas entre appareils et n’a pas de serveur. Vos feuilles font partie des sauvegardes de votre iPhone (sauvegarde iCloud ou sauvegarde sur votre ordinateur) : elles passent donc sur un nouvel iPhone lorsque vous le configurez à partir d’une sauvegarde. Pour en garder une copie ailleurs, exportez la feuille en CSV ou en PDF.</p>
+</div>
+<div class="card">
+<h3>Comment supprimer mes données ?</h3>
+<p>Balayez une feuille dans l’onglet Feuilles pour la supprimer, ou utilisez Réglages › <strong>Supprimer toutes les données</strong> pour effacer toutes les feuilles d’un coup. Supprimer l’app efface toutes ses données de votre iPhone. Nous n’en gardons aucune copie, car rien ne nous est jamais envoyé.</p>
+</div>
+<div class="card">
+<h3>Quels appareils et quelles langues sont pris en charge ?</h3>
+<p>Hoursheet fonctionne sur iPhone avec iOS 18 ou version ultérieure, en français, anglais, allemand, espagnol, italien, portugais (Brésil), russe, japonais et coréen. L’app fonctionne entièrement hors ligne.</p>
+</div>
+</section>
+</main>
+<footer class="wrap">
+    <nav><a href="./">Assistance</a> <a href="../privacy/">Politique de confidentialité</a> <a href="../terms/">Conditions d’utilisation</a></nav>
+    <p>&copy; 2026 MacLarens Studio. Tous droits réservés.</p>
+</footer>
+</body>
+</html>

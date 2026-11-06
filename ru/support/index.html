@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Поддержка Hoursheet · Hoursheet</title>
+    <meta name="description" content="Ответы о табелях, итогах и округлении, экспорте, разовой покупке полной версии, восстановлении покупки, переезде на новый iPhone и удалении данных.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Hoursheet/ru/support/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Hoursheet/de/support/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Hoursheet/es/support/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Hoursheet/fr/support/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Hoursheet/it/support/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Hoursheet/pt-br/support/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Hoursheet/ru/support/">
+    <link rel="alternate" hreflang="ja" href="https://starbuck-dev.github.io/Hoursheet/ja/support/">
+    <link rel="alternate" hreflang="ko" href="https://starbuck-dev.github.io/Hoursheet/ko/support/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --bg: #F5F7F6; --surface: #FFFFFF; --separator: #E1E6E4; --text: #13201E; --text-2: #4B5A57;
+    --accent: #0F766E; --accent-soft: rgba(15, 118, 110, 0.08); --on-accent: #FFFFFF; --todo: #FDE68A;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0B1312; --surface: #15201F; --separator: #263432; --text: #EEF4F2; --text-2: #A3B3B0;
+        --accent: #2DD4BF; --accent-soft: rgba(45, 212, 191, 0.12); --on-accent: #042F2E; --todo: #854D0E;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 12px; }
+.brand { color: var(--text); font-weight: 700; font-size: 20px; text-decoration: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary {
+    list-style: none; cursor: pointer; padding: 6px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--surface); color: var(--text); border: 1px solid var(--separator);
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: " \25BE"; color: var(--text-2); }
+.lang ul {
+    position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none; min-width: 190px;
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+.lang li a { display: block; padding: 7px 12px; border-radius: 9px; color: var(--text); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card {
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 20px;
+    padding: 24px; margin: 16px 0;
+}
+h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+p, li { color: var(--text-2); }
+.date { font-size: 14px; color: var(--text-2); margin: 0 0 20px; }
+.summary { background: var(--accent-soft); border-radius: 14px; padding: 4px 16px; margin: 16px 0; }
+.lead { font-size: 18px; color: var(--text-2); }
+.button {
+    display: inline-block; background: var(--accent); color: var(--on-accent); font-weight: 600;
+    padding: 12px 28px; border-radius: 24px; text-decoration: none; margin-top: 8px;
+}
+.links { display: grid; gap: 12px; margin: 16px 0; }
+.links a {
+    display: block; background: var(--surface); border: 1px solid var(--separator); border-radius: 16px;
+    padding: 16px 20px; text-decoration: none;
+}
+.links strong { display: block; color: var(--text); }
+.links span { color: var(--text-2); font-size: 15px; }
+mark.todo { background: var(--todo); color: var(--text); padding: 0 4px; border-radius: 4px; }
+footer { padding: 16px 16px 40px; font-size: 14px; color: var(--text-2); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+<header class="wrap top">
+    <a class="brand" href="../">Hoursheet</a>
+    <details class="lang">
+        <summary aria-label="Язык">Русский</summary>
+        <ul>
+            <li><a href="../../support/" hreflang="en" lang="en">English</a></li>
+            <li><a href="../../de/support/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="../../es/support/" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../../fr/support/" hreflang="fr" lang="fr">Français</a></li>
+            <li><a href="../../it/support/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="../../pt-br/support/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+            <li><a href="./" hreflang="ru" lang="ru" aria-current="page">Русский</a></li>
+            <li><a href="../../ja/support/" hreflang="ja" lang="ja">日本語</a></li>
+            <li><a href="../../ko/support/" hreflang="ko" lang="ko">한국어</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap">
+<section class="card">
+<h1>Поддержка Hoursheet</h1>
+<p class="lead">Часы, оплата и даты — посчитаны на вашем iPhone.</p>
+<p><strong>Нужна помощь?</strong> Напишите на <a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a>. MacLarens Studio обычно отвечает в течение двух рабочих дней. Совет: «Настройки» › «Написать в поддержку» в приложении добавляет в письмо версию приложения, версию iOS и модель устройства.</p>
+<a class="button" href="mailto:ssx51f@gmail.com?subject=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0%20Hoursheet">Написать в поддержку</a>
+</section>
+<section>
+<h2>Частые вопросы</h2>
+<div class="card">
+<h3>Как добавить строки в табель?</h3>
+<p>Откройте табель на вкладке «Табели» и нажмите <strong>+</strong>. У <strong>рабочего дня</strong> есть начало, конец и перерыв, а длительность Hoursheet считает сам (если конец раньше начала, время считается через полночь). <strong>Длительность</strong> — это просто время с подписью, например «Дорога 1:30». Нажмите на любую строку, чтобы изменить её прямо в списке. <strong>Шаблон недели</strong> добавляет сразу семь рабочих дней.</p>
+</div>
+<div class="card">
+<h3>Как считаются итог, округление и оплата?</h3>
+<p>Итог показывается в часах и минутах (ч:мм) и в десятичных часах. Если задать в табеле почасовую ставку, Hoursheet покажет и оплату — в валюте табеля. Округление (до минуты, до четверти часа или до 6 минут) применяется к каждой строке; итог — это сумма округлённых строк, а оплата считается один раз от этого итога.</p>
+</div>
+<div class="card">
+<h3>Что бесплатно и что даёт полная версия?</h3>
+<p>Бесплатно навсегда: один табель с полным итогом, ставкой, округлением и оплатой, экраны «Разница» и «Даты», экспорт текстом и в CSV. Разовая покупка <strong>«Полная версия»</strong> добавляет неограниченное число сохранённых табелей, экспорт в PDF и пресеты ставок и округления. Подписки и рекламы нет. Цену в вашей валюте App Store показывает до покупки.</p>
+</div>
+<div class="card">
+<h3>Как восстановить покупку на новом iPhone?</h3>
+<p>Войдите в Аккаунт Apple, с которым вы купили полную версию, и нажмите <strong>«Восстановить покупки»</strong> в настройках или на экране покупки. Покупка привязана к вашему Аккаунту Apple, поэтому работает на любом iPhone, где вы им пользуетесь.</p>
+</div>
+<div class="card">
+<h3>Как экспортировать табель?</h3>
+<p>Откройте табель и нажмите <strong>«Экспорт»</strong>: выберите «Текст», CSV или PDF и отправьте файл через меню «Поделиться» (Почта, Сообщения, Файлы, AirDrop или другое приложение). CSV открывается в Numbers, Excel и Google Таблицах. В версии 1.0 экспортированные файлы — на английском.</p>
+</div>
+<div class="card">
+<h3>Синхронизируются ли табели и попадают ли они в резервную копию?</h3>
+<p>Ваши табели хранятся только на вашем iPhone. Hoursheet не синхронизирует данные между устройствами и не использует сервер. Табели входят в резервные копии iPhone (резервная копия iCloud или копия на компьютере), поэтому переезжают на новый iPhone, если настроить его из резервной копии. Чтобы сохранить копию в другом месте, экспортируйте табель в CSV или PDF.</p>
+</div>
+<div class="card">
+<h3>Как удалить мои данные?</h3>
+<p>Смахните табель на вкладке «Табели», чтобы удалить его, или выберите «Настройки» › <strong>«Удалить все данные»</strong>, чтобы удалить все табели сразу. При удалении приложения все его данные удаляются с iPhone. У нас нет копии, потому что нам ничего не отправляется.</p>
+</div>
+<div class="card">
+<h3>Какие устройства и языки поддерживаются?</h3>
+<p>Hoursheet работает на iPhone с iOS 18 или новее, на русском, английском, немецком, испанском, французском, итальянском, португальском (Бразилия), японском и корейском языках. Приложение полностью работает без интернета.</p>
+</div>
+</section>
+</main>
+<footer class="wrap">
+    <nav><a href="./">Поддержка</a> <a href="../privacy/">Политика конфиденциальности</a> <a href="../terms/">Условия использования</a></nav>
+    <p>&copy; 2026 MacLarens Studio. Все права защищены.</p>
+</footer>
+</body>
+</html>

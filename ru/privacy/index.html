@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Политика конфиденциальности · Hoursheet</title>
+    <meta name="description" content="Hoursheet не собирает никаких данных: ни аккаунта, ни сервера, ни аналитики, ни отслеживания. Ваши табели остаются на вашем iPhone.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Hoursheet/ru/privacy/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Hoursheet/privacy/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Hoursheet/de/privacy/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Hoursheet/es/privacy/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Hoursheet/fr/privacy/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Hoursheet/it/privacy/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Hoursheet/pt-br/privacy/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Hoursheet/ru/privacy/">
+    <link rel="alternate" hreflang="ja" href="https://starbuck-dev.github.io/Hoursheet/ja/privacy/">
+    <link rel="alternate" hreflang="ko" href="https://starbuck-dev.github.io/Hoursheet/ko/privacy/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Hoursheet/privacy/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --bg: #F5F7F6; --surface: #FFFFFF; --separator: #E1E6E4; --text: #13201E; --text-2: #4B5A57;
+    --accent: #0F766E; --accent-soft: rgba(15, 118, 110, 0.08); --on-accent: #FFFFFF; --todo: #FDE68A;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0B1312; --surface: #15201F; --separator: #263432; --text: #EEF4F2; --text-2: #A3B3B0;
+        --accent: #2DD4BF; --accent-soft: rgba(45, 212, 191, 0.12); --on-accent: #042F2E; --todo: #854D0E;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 12px; }
+.brand { color: var(--text); font-weight: 700; font-size: 20px; text-decoration: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary {
+    list-style: none; cursor: pointer; padding: 6px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--surface); color: var(--text); border: 1px solid var(--separator);
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: " \25BE"; color: var(--text-2); }
+.lang ul {
+    position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none; min-width: 190px;
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+.lang li a { display: block; padding: 7px 12px; border-radius: 9px; color: var(--text); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card {
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 20px;
+    padding: 24px; margin: 16px 0;
+}
+h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+p, li { color: var(--text-2); }
+.date { font-size: 14px; color: var(--text-2); margin: 0 0 20px; }
+.summary { background: var(--accent-soft); border-radius: 14px; padding: 4px 16px; margin: 16px 0; }
+.lead { font-size: 18px; color: var(--text-2); }
+.button {
+    display: inline-block; background: var(--accent); color: var(--on-accent); font-weight: 600;
+    padding: 12px 28px; border-radius: 24px; text-decoration: none; margin-top: 8px;
+}
+.links { display: grid; gap: 12px; margin: 16px 0; }
+.links a {
+    display: block; background: var(--surface); border: 1px solid var(--separator); border-radius: 16px;
+    padding: 16px 20px; text-decoration: none;
+}
+.links strong { display: block; color: var(--text); }
+.links span { color: var(--text-2); font-size: 15px; }
+mark.todo { background: var(--todo); color: var(--text); padding: 0 4px; border-radius: 4px; }
+footer { padding: 16px 16px 40px; font-size: 14px; color: var(--text-2); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+<header class="wrap top">
+    <a class="brand" href="../">Hoursheet</a>
+    <details class="lang">
+        <summary aria-label="Язык">Русский</summary>
+        <ul>
+            <li><a href="../../privacy/" hreflang="en" lang="en">English</a></li>
+            <li><a href="../../de/privacy/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="../../es/privacy/" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../../fr/privacy/" hreflang="fr" lang="fr">Français</a></li>
+            <li><a href="../../it/privacy/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="../../pt-br/privacy/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+            <li><a href="./" hreflang="ru" lang="ru" aria-current="page">Русский</a></li>
+            <li><a href="../../ja/privacy/" hreflang="ja" lang="ja">日本語</a></li>
+            <li><a href="../../ko/privacy/" hreflang="ko" lang="ko">한국어</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap">
+<article class="card">
+<h1>Политика конфиденциальности</h1>
+<p class="date">Действует с: 31 октября 2026 г.</p>
+<div class="summary"><p><strong>Кратко:</strong> Hoursheet не собирает никаких данных. Нет ни аккаунта, ни нашего сервера, ни аналитики, ни рекламы, ни отслеживания. Ваши табели остаются на вашем iPhone, а экспортированные файлы попадают только туда, куда вы их отправите.</p></div>
+<section>
+<h2>1. Кто мы</h2>
+<p>Hoursheet — приложение для iPhone, которое предоставляет MacLarens Studio («мы»).</p>
+</section>
+<section>
+<h2>2. Какие данные мы не собираем</h2>
+<p>Через приложение мы не собираем, не получаем и не храним никаких персональных данных. В Hoursheet нет входа и аккаунта, мы не используем для него никакой сервер, и в приложении нет SDK аналитики, отчётов о сбоях, рекламы или иных третьих сторон. Приложение не отслеживает вас в других приложениях и на сайтах, не использует рекламный идентификатор и никогда не запрашивает разрешение на отслеживание.</p>
+</section>
+<section>
+<h2>3. Ваши табели</h2>
+<p>Всё, что вы вводите (табели, строки, подписи, ставки и пресеты), хранится только на вашем iPhone, в собственном хранилище приложения. Некоторые настройки, например валюта и округление по умолчанию, хранятся в настройках приложения на устройстве. Мы не можем ничего из этого увидеть, прочитать или восстановить.</p>
+<p>Как и данные других приложений, ваши табели входят в резервные копии iPhone, если вы пользуетесь резервным копированием в iCloud или на компьютер. Эти копии принадлежат вашему Аккаунту Apple или вашему компьютеру, и у нас нет к ним доступа. Hoursheet не синхронизирует табели между устройствами.</p>
+</section>
+<section>
+<h2>4. Экспорт</h2>
+<p>Когда вы экспортируете табель текстом, в CSV или PDF, файл создаётся на вашем iPhone и попадает только туда, куда вы отправите его через меню «Поделиться» (Почта, Сообщения, Файлы, AirDrop или другое приложение). Эту передачу выполняет Apple или выбранное вами приложение, а не мы.</p>
+</section>
+<section>
+<h2>5. Покупки</h2>
+<p>Необязательная «Полная версия» покупается через App Store. Платёж обрабатывает Apple; мы никогда не видим ваше имя, ваш Аккаунт Apple или платёжные данные. Приложение лишь спрашивает у App Store, куплена ли полная версия на вашем Аккаунте Apple. Как Apple обращается с этими данными, описано в <a href="https://www.apple.com/ru/legal/privacy/">Политике конфиденциальности Apple</a>.</p>
+</section>
+<section>
+<h2>6. Оценки</h2>
+<p>Иногда приложение может показать стандартный запрос оценки Apple. Ставить ли оценку и какую, полностью обрабатывает Apple; приложение лишь считает на вашем iPhone, как часто вы им пользовались.</p>
+</section>
+<section>
+<h2>7. Письма в поддержку</h2>
+<p>Если вы нам пишете, мы получаем ваш адрес электронной почты и всё, что вы отправили, включая версию приложения, версию iOS и модель устройства, которые добавляет письмо в поддержку из приложения. Мы используем эти данные только для ответа вам, никому их не передаём и удаляем, когда они больше не нужны для вашего обращения. Правовое основание — ст. 6(1)(b) и (f) GDPR.</p>
+</section>
+<section>
+<h2>8. Удаление данных</h2>
+<p>Вы можете удалять отдельные табели или все табели сразу через «Настройки» › «Удалить все данные». При удалении приложения все его данные удаляются с iPhone. Поскольку у нас нет данных о вас, по запросу нам нечего выгрузить или удалить, кроме писем, которые вы нам отправили.</p>
+</section>
+<section>
+<h2>9. Дети</h2>
+<p>Hoursheet подходит для любого возраста и ни у кого не собирает данных, в том числе у детей.</p>
+</section>
+<section>
+<h2>10. Ваши права</h2>
+<p>По GDPR и аналогичным законам вы вправе получить доступ к своим персональным данным, исправить и удалить их, а также подать жалобу в орган по защите данных. Поскольку приложение не собирает данных, эти права касаются только писем, которые вы нам отправили; пишите на <a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a>.</p>
+</section>
+<section>
+<h2>11. Изменения</h2>
+<p>Если эта политика изменится, новая редакция будет опубликована на этой странице с новой датой вступления в силу. Если приложение когда-нибудь начнёт собирать данные, политика сообщит об этом до выхода такой версии.</p>
+</section>
+<section>
+<h2>12. Контакты</h2>
+<p>Вопросы об этой Политике конфиденциальности присылайте на <a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a>.</p>
+</section>
+</article>
+</main>
+<footer class="wrap">
+    <nav><a href="../support/">Поддержка</a> <a href="./">Политика конфиденциальности</a> <a href="../terms/">Условия использования</a></nav>
+    <p>&copy; 2026 MacLarens Studio. Все права защищены.</p>
+</footer>
+</body>
+</html>

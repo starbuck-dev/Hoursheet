@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Condiciones de uso · Hoursheet</title>
+    <meta name="description" content="Hoursheet se ofrece bajo el contrato de licencia estándar de Apple. El Desbloqueo completo es una compra única a través del App Store.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Hoursheet/es/terms/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Hoursheet/terms/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Hoursheet/de/terms/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Hoursheet/es/terms/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Hoursheet/fr/terms/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Hoursheet/it/terms/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Hoursheet/pt-br/terms/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Hoursheet/ru/terms/">
+    <link rel="alternate" hreflang="ja" href="https://starbuck-dev.github.io/Hoursheet/ja/terms/">
+    <link rel="alternate" hreflang="ko" href="https://starbuck-dev.github.io/Hoursheet/ko/terms/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Hoursheet/terms/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --bg: #F5F7F6; --surface: #FFFFFF; --separator: #E1E6E4; --text: #13201E; --text-2: #4B5A57;
+    --accent: #0F766E; --accent-soft: rgba(15, 118, 110, 0.08); --on-accent: #FFFFFF; --todo: #FDE68A;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0B1312; --surface: #15201F; --separator: #263432; --text: #EEF4F2; --text-2: #A3B3B0;
+        --accent: #2DD4BF; --accent-soft: rgba(45, 212, 191, 0.12); --on-accent: #042F2E; --todo: #854D0E;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 12px; }
+.brand { color: var(--text); font-weight: 700; font-size: 20px; text-decoration: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary {
+    list-style: none; cursor: pointer; padding: 6px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--surface); color: var(--text); border: 1px solid var(--separator);
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: " \25BE"; color: var(--text-2); }
+.lang ul {
+    position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none; min-width: 190px;
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+.lang li a { display: block; padding: 7px 12px; border-radius: 9px; color: var(--text); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card {
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 20px;
+    padding: 24px; margin: 16px 0;
+}
+h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+p, li { color: var(--text-2); }
+.date { font-size: 14px; color: var(--text-2); margin: 0 0 20px; }
+.summary { background: var(--accent-soft); border-radius: 14px; padding: 4px 16px; margin: 16px 0; }
+.lead { font-size: 18px; color: var(--text-2); }
+.button {
+    display: inline-block; background: var(--accent); color: var(--on-accent); font-weight: 600;
+    padding: 12px 28px; border-radius: 24px; text-decoration: none; margin-top: 8px;
+}
+.links { display: grid; gap: 12px; margin: 16px 0; }
+.links a {
+    display: block; background: var(--surface); border: 1px solid var(--separator); border-radius: 16px;
+    padding: 16px 20px; text-decoration: none;
+}
+.links strong { display: block; color: var(--text); }
+.links span { color: var(--text-2); font-size: 15px; }
+mark.todo { background: var(--todo); color: var(--text); padding: 0 4px; border-radius: 4px; }
+footer { padding: 16px 16px 40px; font-size: 14px; color: var(--text-2); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+<header class="wrap top">
+    <a class="brand" href="../">Hoursheet</a>
+    <details class="lang">
+        <summary aria-label="Idioma">Español</summary>
+        <ul>
+            <li><a href="../../terms/" hreflang="en" lang="en">English</a></li>
+            <li><a href="../../de/terms/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="./" hreflang="es" lang="es" aria-current="page">Español</a></li>
+            <li><a href="../../fr/terms/" hreflang="fr" lang="fr">Français</a></li>
+            <li><a href="../../it/terms/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="../../pt-br/terms/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+            <li><a href="../../ru/terms/" hreflang="ru" lang="ru">Русский</a></li>
+            <li><a href="../../ja/terms/" hreflang="ja" lang="ja">日本語</a></li>
+            <li><a href="../../ko/terms/" hreflang="ko" lang="ko">한국어</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap">
+<article class="card">
+<h1>Condiciones de uso</h1>
+<p class="date">Fecha de entrada en vigor: 31 de octubre de 2026</p>
+<div class="summary"><p><strong>En resumen:</strong> El uso de Hoursheet se rige por el <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de licencia de usuario final de aplicaciones con licencia</a> estándar de Apple. Los puntos siguientes explican cómo se aplica a la app.</p></div>
+<section>
+<h2>1. Licencia</h2>
+<p>Hoursheet lo ofrece MacLarens Studio y se te concede bajo el <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de licencia de usuario final de aplicaciones con licencia (EULA)</a> de Apple. No añadimos condiciones propias más allá de lo que explica esta página.</p>
+</section>
+<section>
+<h2>2. Desbloqueo completo</h2>
+<p>Hoursheet se descarga gratis. El Desbloqueo completo opcional es una compra única dentro de la app, no consumible, que añade hojas guardadas ilimitadas, la exportación a PDF y preajustes. No es una suscripción y nunca se renueva. El App Store muestra el precio en tu moneda antes de comprar. Puedes restaurar la compra en cualquier dispositivo con la misma Cuenta de Apple mediante Restaurar compras.</p>
+</section>
+<section>
+<h2>3. Pago y reembolsos</h2>
+<p>Las compras las procesa Apple según las condiciones del App Store. Los reembolsos los gestiona Apple; puedes solicitarlos en <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>.</p>
+</section>
+<section>
+<h2>4. Tus datos y tus cálculos</h2>
+<p>Tus hojas te pertenecen y se quedan en tu dispositivo (consulta la <a href="../privacy/">Política de privacidad</a>). Hoursheet es una ayuda para calcular: revisa los totales y el pago antes de fiarte de ellos, por ejemplo para una factura o un parte de horas que entregues. Como se indica en el EULA, la app se ofrece “tal cual”; esto no afecta a los derechos que te reconozca la ley de forma imperativa.</p>
+</section>
+<section>
+<h2>5. Contacto</h2>
+<p>Preguntas sobre estas condiciones: <a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a>.</p>
+</section>
+</article>
+</main>
+<footer class="wrap">
+    <nav><a href="../support/">Soporte</a> <a href="../privacy/">Política de privacidad</a> <a href="./">Condiciones de uso</a></nav>
+    <p>&copy; 2026 MacLarens Studio. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>

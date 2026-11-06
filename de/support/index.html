@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hoursheet-Support · Hoursheet</title>
+    <meta name="description" content="Antworten zu Listen, Summen und Rundung, Export, der einmaligen Freischaltung, dem Wiederherstellen eines Kaufs, dem Umzug auf ein neues iPhone und dem Löschen von Daten.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Hoursheet/de/support/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Hoursheet/de/support/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Hoursheet/es/support/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Hoursheet/fr/support/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Hoursheet/it/support/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Hoursheet/pt-br/support/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Hoursheet/ru/support/">
+    <link rel="alternate" hreflang="ja" href="https://starbuck-dev.github.io/Hoursheet/ja/support/">
+    <link rel="alternate" hreflang="ko" href="https://starbuck-dev.github.io/Hoursheet/ko/support/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --bg: #F5F7F6; --surface: #FFFFFF; --separator: #E1E6E4; --text: #13201E; --text-2: #4B5A57;
+    --accent: #0F766E; --accent-soft: rgba(15, 118, 110, 0.08); --on-accent: #FFFFFF; --todo: #FDE68A;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0B1312; --surface: #15201F; --separator: #263432; --text: #EEF4F2; --text-2: #A3B3B0;
+        --accent: #2DD4BF; --accent-soft: rgba(45, 212, 191, 0.12); --on-accent: #042F2E; --todo: #854D0E;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 12px; }
+.brand { color: var(--text); font-weight: 700; font-size: 20px; text-decoration: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary {
+    list-style: none; cursor: pointer; padding: 6px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--surface); color: var(--text); border: 1px solid var(--separator);
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: " \25BE"; color: var(--text-2); }
+.lang ul {
+    position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none; min-width: 190px;
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+.lang li a { display: block; padding: 7px 12px; border-radius: 9px; color: var(--text); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card {
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 20px;
+    padding: 24px; margin: 16px 0;
+}
+h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+p, li { color: var(--text-2); }
+.date { font-size: 14px; color: var(--text-2); margin: 0 0 20px; }
+.summary { background: var(--accent-soft); border-radius: 14px; padding: 4px 16px; margin: 16px 0; }
+.lead { font-size: 18px; color: var(--text-2); }
+.button {
+    display: inline-block; background: var(--accent); color: var(--on-accent); font-weight: 600;
+    padding: 12px 28px; border-radius: 24px; text-decoration: none; margin-top: 8px;
+}
+.links { display: grid; gap: 12px; margin: 16px 0; }
+.links a {
+    display: block; background: var(--surface); border: 1px solid var(--separator); border-radius: 16px;
+    padding: 16px 20px; text-decoration: none;
+}
+.links strong { display: block; color: var(--text); }
+.links span { color: var(--text-2); font-size: 15px; }
+mark.todo { background: var(--todo); color: var(--text); padding: 0 4px; border-radius: 4px; }
+footer { padding: 16px 16px 40px; font-size: 14px; color: var(--text-2); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+<header class="wrap top">
+    <a class="brand" href="../">Hoursheet</a>
+    <details class="lang">
+        <summary aria-label="Sprache">Deutsch</summary>
+        <ul>
+            <li><a href="../../support/" hreflang="en" lang="en">English</a></li>
+            <li><a href="./" hreflang="de" lang="de" aria-current="page">Deutsch</a></li>
+            <li><a href="../../es/support/" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../../fr/support/" hreflang="fr" lang="fr">Français</a></li>
+            <li><a href="../../it/support/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="../../pt-br/support/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+            <li><a href="../../ru/support/" hreflang="ru" lang="ru">Русский</a></li>
+            <li><a href="../../ja/support/" hreflang="ja" lang="ja">日本語</a></li>
+            <li><a href="../../ko/support/" hreflang="ko" lang="ko">한국어</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap">
+<section class="card">
+<h1>Hoursheet-Support</h1>
+<p class="lead">Stunden, Lohn und Tage, summiert auf deinem iPhone.</p>
+<p><strong>Brauchst du Hilfe?</strong> Schreib an <a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a>. MacLarens Studio antwortet meist innerhalb von zwei Werktagen. Tipp: Einstellungen › „Support kontaktieren“ in der App fügt der E-Mail deine App-Version, iOS-Version und dein Gerät hinzu.</p>
+<a class="button" href="mailto:ssx51f@gmail.com?subject=Hoursheet-Support">E-Mail an den Support</a>
+</section>
+<section>
+<h2>Häufige Fragen</h2>
+<div class="card">
+<h3>Wie füge ich einer Liste Zeilen hinzu?</h3>
+<p>Öffne eine Liste im Tab „Listen“ und tippe auf <strong>+</strong>. Ein <strong>Arbeitstag</strong> hat Beginn, Ende und Pause, Hoursheet berechnet daraus die Dauer (liegt das Ende vor dem Beginn, zählt die Zeit über Mitternacht). Eine <strong>Dauer</strong> ist einfach eine Zeit mit Bezeichnung, zum Beispiel „Fahrt 1:30“. Tippe auf eine Zeile, um sie direkt zu bearbeiten. Die <strong>Wochenvorlage</strong> fügt sieben Arbeitstage auf einmal hinzu.</p>
+</div>
+<div class="card">
+<h3>Wie werden Summe, Rundung und Lohn berechnet?</h3>
+<p>Die Summe steht als Stunden und Minuten (h:mm) und als Dezimalstunden da. Legst du in der Liste einen Stundenlohn fest, zeigt Hoursheet auch den Lohn in der Währung der Liste. Die Rundung (auf die Minute, die Viertelstunde oder 6 Minuten) gilt für jede Zeile; die Summe ist die Summe der gerundeten Zeilen, und der Lohn wird einmal aus dieser Summe berechnet.</p>
+</div>
+<div class="card">
+<h3>Was ist kostenlos und was bringt die Freischaltung?</h3>
+<p>Dauerhaft kostenlos: eine Liste mit Summe, Stundenlohn, Rundung und Lohn, die Bildschirme Differenz und Datum sowie der Export als Text und CSV. Der einmalige Kauf <strong>Alles freischalten</strong> bringt unbegrenzt viele gespeicherte Listen, den PDF-Export und Vorlagen für Stundenlohn und Rundung. Es gibt kein Abo und keine Werbung. Den Preis in deiner Währung zeigt der App Store vor dem Kauf.</p>
+</div>
+<div class="card">
+<h3>Wie stelle ich meinen Kauf auf einem neuen iPhone wieder her?</h3>
+<p>Melde dich mit dem Apple Account an, mit dem du die Freischaltung gekauft hast, und tippe in den Einstellungen oder auf dem Freischaltungs-Bildschirm auf <strong>Käufe wiederherstellen</strong>. Der Kauf gehört zu deinem Apple Account und funktioniert deshalb auf jedem iPhone, das du damit nutzt.</p>
+</div>
+<div class="card">
+<h3>Wie exportiere ich eine Liste?</h3>
+<p>Öffne die Liste und tippe auf <strong>Exportieren</strong>: Wähle Text, CSV oder PDF und sende die Datei über das Teilen-Menü (Mail, Nachrichten, Dateien, AirDrop oder eine andere App). CSV öffnet sich in Numbers, Excel und Google Sheets. Die exportierten Dateien sind in Version 1.0 auf Englisch.</p>
+</div>
+<div class="card">
+<h3>Werden meine Listen synchronisiert oder gesichert?</h3>
+<p>Deine Listen liegen nur auf deinem iPhone. Hoursheet synchronisiert nicht zwischen Geräten und hat keinen Server. Deine Listen sind Teil deiner iPhone-Backups (iCloud-Backup oder ein Backup auf deinem Computer) und ziehen deshalb mit um, wenn du ein neues iPhone aus einem Backup einrichtest. Für eine Kopie an anderer Stelle exportierst du eine Liste als CSV oder PDF.</p>
+</div>
+<div class="card">
+<h3>Wie lösche ich meine Daten?</h3>
+<p>Wische im Tab „Listen“ über eine Liste, um sie zu löschen, oder entferne mit Einstellungen › <strong>Alle Daten löschen</strong> alle Listen auf einmal. Wenn du die App löschst, sind alle ihre Daten von deinem iPhone entfernt. Wir haben keine Kopie, denn an uns wird nie etwas gesendet.</p>
+</div>
+<div class="card">
+<h3>Welche Geräte und Sprachen werden unterstützt?</h3>
+<p>Hoursheet läuft auf dem iPhone ab iOS 18, auf Deutsch, Englisch, Spanisch, Französisch, Italienisch, Portugiesisch (Brasilien), Russisch, Japanisch und Koreanisch. Die App funktioniert vollständig offline.</p>
+</div>
+</section>
+</main>
+<footer class="wrap">
+    <nav><a href="./">Support</a> <a href="../privacy/">Datenschutzerklärung</a> <a href="../terms/">Nutzungsbedingungen</a></nav>
+    <p>&copy; 2026 MacLarens Studio. Alle Rechte vorbehalten.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hoursheet Support · Hoursheet</title>
+    <meta name="description" content="Answers about sheets, totals and rounding, export, the one-time unlock, restoring a purchase, moving to a new iPhone and deleting data.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Hoursheet/de/support/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Hoursheet/es/support/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Hoursheet/fr/support/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Hoursheet/it/support/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Hoursheet/pt-br/support/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Hoursheet/ru/support/">
+    <link rel="alternate" hreflang="ja" href="https://starbuck-dev.github.io/Hoursheet/ja/support/">
+    <link rel="alternate" hreflang="ko" href="https://starbuck-dev.github.io/Hoursheet/ko/support/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Hoursheet/support/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --bg: #F5F7F6; --surface: #FFFFFF; --separator: #E1E6E4; --text: #13201E; --text-2: #4B5A57;
+    --accent: #0F766E; --accent-soft: rgba(15, 118, 110, 0.08); --on-accent: #FFFFFF; --todo: #FDE68A;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0B1312; --surface: #15201F; --separator: #263432; --text: #EEF4F2; --text-2: #A3B3B0;
+        --accent: #2DD4BF; --accent-soft: rgba(45, 212, 191, 0.12); --on-accent: #042F2E; --todo: #854D0E;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 12px; }
+.brand { color: var(--text); font-weight: 700; font-size: 20px; text-decoration: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary {
+    list-style: none; cursor: pointer; padding: 6px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--surface); color: var(--text); border: 1px solid var(--separator);
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: " \25BE"; color: var(--text-2); }
+.lang ul {
+    position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none; min-width: 190px;
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+.lang li a { display: block; padding: 7px 12px; border-radius: 9px; color: var(--text); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card {
+    background: var(--surface); border: 1px solid var(--separator); border-radius: 20px;
+    padding: 24px; margin: 16px 0;
+}
+h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+p, li { color: var(--text-2); }
+.date { font-size: 14px; color: var(--text-2); margin: 0 0 20px; }
+.summary { background: var(--accent-soft); border-radius: 14px; padding: 4px 16px; margin: 16px 0; }
+.lead { font-size: 18px; color: var(--text-2); }
+.button {
+    display: inline-block; background: var(--accent); color: var(--on-accent); font-weight: 600;
+    padding: 12px 28px; border-radius: 24px; text-decoration: none; margin-top: 8px;
+}
+.links { display: grid; gap: 12px; margin: 16px 0; }
+.links a {
+    display: block; background: var(--surface); border: 1px solid var(--separator); border-radius: 16px;
+    padding: 16px 20px; text-decoration: none;
+}
+.links strong { display: block; color: var(--text); }
+.links span { color: var(--text-2); font-size: 15px; }
+mark.todo { background: var(--todo); color: var(--text); padding: 0 4px; border-radius: 4px; }
+footer { padding: 16px 16px 40px; font-size: 14px; color: var(--text-2); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+<header class="wrap top">
+    <a class="brand" href="../">Hoursheet</a>
+    <details class="lang">
+        <summary aria-label="Language">English</summary>
+        <ul>
+            <li><a href="./" hreflang="en" lang="en" aria-current="page">English</a></li>
+            <li><a href="../de/support/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="../es/support/" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../fr/support/" hreflang="fr" lang="fr">Français</a></li>
+            <li><a href="../it/support/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="../pt-br/support/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+            <li><a href="../ru/support/" hreflang="ru" lang="ru">Русский</a></li>
+            <li><a href="../ja/support/" hreflang="ja" lang="ja">日本語</a></li>
+            <li><a href="../ko/support/" hreflang="ko" lang="ko">한국어</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap">
+<section class="card">
+<h1>Hoursheet Support</h1>
+<p class="lead">Hours, pay and days, totalled on your iPhone.</p>
+<p><strong>Need help?</strong> Write to <a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a>. MacLarens Studio usually answers within two working days. Tip: Settings › Contact Support in the app adds your app version, iOS version and device to the email.</p>
+<a class="button" href="mailto:ssx51f@gmail.com?subject=Hoursheet%20Support">Email Support</a>
+</section>
+<section>
+<h2>Frequently asked questions</h2>
+<div class="card">
+<h3>How do I add rows to a sheet?</h3>
+<p>Open a sheet on the Sheets tab and tap <strong>+</strong>. A <strong>work day</strong> has a start, an end and a break, and Hoursheet works out the duration (an end before the start counts across midnight). A <strong>duration</strong> is just a time with a label, for example “Travel 1:30”. Tap any row to edit it in place. <strong>Week Template</strong> adds seven work days at once.</p>
+</div>
+<div class="card">
+<h3>How are totals, rounding and pay worked out?</h3>
+<p>The total is shown as hours and minutes (h:mm) and as decimal hours. If you set an hourly rate on the sheet, Hoursheet shows the pay as well, in the sheet's currency. Rounding (to the nearest minute, quarter hour or 6 minutes) is applied to each row; the total is the sum of the rounded rows, and the pay is worked out once from that total.</p>
+</div>
+<div class="card">
+<h3>What is free and what does the unlock add?</h3>
+<p>Free, for good: one sheet with full totals, rate, rounding and pay, the time difference and dates screens, and export as text and CSV. The one-time <strong>Lifetime Unlock</strong> adds unlimited saved sheets, PDF export and presets for rates and rounding. There is no subscription and no ads. The App Store shows the price in your currency before you buy.</p>
+</div>
+<div class="card">
+<h3>How do I restore my purchase on a new iPhone?</h3>
+<p>Sign in with the Apple Account you bought the unlock with, then tap <strong>Restore Purchases</strong> in Settings or on the unlock screen. The purchase belongs to your Apple Account, so it works on every iPhone you use with it.</p>
+</div>
+<div class="card">
+<h3>How do I export a sheet?</h3>
+<p>Open the sheet and tap <strong>Export</strong>: choose Text, CSV or PDF and send the file with the share sheet (Mail, Messages, Files, AirDrop or another app). CSV opens in Numbers, Excel and Google Sheets. The exported files are in English.</p>
+</div>
+<div class="card">
+<h3>Are my sheets synced or backed up?</h3>
+<p>Your sheets are stored only on your iPhone. Hoursheet doesn't sync between devices and has no server. Your sheets are part of your iPhone backups (iCloud Backup or a backup on your computer), so they move to a new iPhone when you set it up from a backup. To keep a copy elsewhere, export a sheet as CSV or PDF.</p>
+</div>
+<div class="card">
+<h3>How do I delete my data?</h3>
+<p>Swipe a sheet on the Sheets tab to delete it, or use Settings › <strong>Delete All Data</strong> to remove every sheet at once. Deleting the app removes all of its data from your iPhone. We hold no copy, because nothing is ever sent to us.</p>
+</div>
+<div class="card">
+<h3>Which devices and languages are supported?</h3>
+<p>Hoursheet runs on iPhone with iOS 18 or later, in English, German, Spanish, French, Italian, Brazilian Portuguese, Russian, Japanese and Korean. It works fully offline.</p>
+</div>
+</section>
+</main>
+<footer class="wrap">
+    <nav><a href="./">Support</a> <a href="../privacy/">Privacy Policy</a> <a href="../terms/">Terms of Use</a></nav>
+    <p>&copy; 2026 MacLarens Studio. All rights reserved.</p>
+</footer>
+</body>
+</html>
